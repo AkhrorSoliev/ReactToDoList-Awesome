@@ -22,9 +22,10 @@ function App() {
         break
     }
   }
-  useEffect(() => {}, [])
+  useEffect(() => {
+    filterHandler()
+  }, [todos, status])
 
-  console.log('salom')
   return (
     <div className="App">
       <header>
@@ -37,7 +38,11 @@ function App() {
         setInputText={setInputText}
         setStatus={setStatus}
       />
-      <ToDoList setTodos={setTodos} todos1={todos} />
+      <ToDoList
+        setTodos={setTodos}
+        todos1={todos}
+        filteredTodos={filteredTodos}
+      />
     </div>
   )
 }
